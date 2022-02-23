@@ -14,14 +14,7 @@ namespace homeTask_2
                 array[i] = (int)Math.Pow(i,2);
                 Console.Write("Element of massive {0}\n", array[i]);
             }
-           // Array.Resize(ref array, array.Length + 10);
-            
-            int num = 0;
-            foreach (int ele in array)
-            {
-                
-                Console.WriteLine($"Element of massive = {Math.Pow(num++, 2)}");
-            }
+           
         }
     }
 }
