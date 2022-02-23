@@ -25,7 +25,6 @@ namespace homeTask_1
             uint uiMin = uint.MinValue;
             ulong ulMax = ulong.MaxValue;
             ulong ulMin = ulong.MinValue;
-
             Console.WriteLine("Max Value of Byte Type  = {0}\n" +
               "Min Value of byte type  = {1}\n" +
               "Max value of short type = {2}\n" +
@@ -42,9 +41,6 @@ namespace homeTask_1
                 "Min value of uint type = {13}\n" +
                 "Max value of ulong type = {14}\n" +
                 "Min value of ulong type = {15}\n", bMax, bMin, sMax, sMin, iMax, iMin, lMax, lMin, fMax, fMin, dMax, dMin, uiMax, uiMin, ulMax, ulMin);
-            //Console.WriteLine(iMax + " " + iMin);
-
-
         }
     }
 }
