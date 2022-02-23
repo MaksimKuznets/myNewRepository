@@ -1,4 +1,4 @@
-# Исключить все файлы с расширение .a
+# Exclude all files in the following directories:
 /**/bin
 /**/obj
 .vs/
