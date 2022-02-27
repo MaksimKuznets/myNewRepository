@@ -25,25 +25,39 @@ namespace homeTask_4
             }
         }
 
-        static int MaxElement(int[] array)
+        static (int min, int max) MinMaxElement(int[] array)
         {
-            int max = array[0];
+            var minMax = (min: array[0], max: array[0]);
             for (int i = 0; i < array.Length; ++i)
-                if (array[i] > max) 
-                 max = array[i];
-                    
-            return max;
+            {
+
+                if (array[i] > minMax.max)
+                {
+                    minMax.max = array[i];
+                    continue;
+                }
+                else
+                if (array[i] < minMax.min)
+                {
+                    minMax.min = array[i];
+                    continue;
+                }
+                else
+                if ((array[i] == minMax.max) || (array[i] == minMax.max)) continue;
+            }
+
+            return minMax;
         }
 
-        static int MinElement(int[] array)
-        {
-            int min = array[0];
-            for (int i = 0; i < array.Length; i++)
-                if (array[i] < min)
-                   min = array[i];
+        //static int MinElement(int[] array)
+        //{
+        //    int min = array[0];
+        //    for (int i = 0; i < array.Length; i++)
+        //        if (array[i] < min)
+        //           min = array[i];
                  
-            return min;
-        }
+        //    return min;
+        //}
         static void SwitchArray(int[] array)
         {
             int min = array[0];
@@ -53,14 +67,16 @@ namespace homeTask_4
 
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] > max) {
-                    max = array[i];
-                    maxNumber = i;
-                        }
-                if (array[i] < min) {
-                    min = array[i];
-                    minNumber = i;
-                        }
+
+                maxNumber = (array[i] > max) ? array[i] : maxNumber;
+                //if (array[i] > max) {
+                //    max = array[i];
+                //    maxNumber = i;
+                //        }
+                //if (array[i] < min) {
+                //    min = array[i];
+                //    minNumber = i;
+                //        }
             }
             int buf = array[maxNumber];
             array[maxNumber] = array[minNumber];
@@ -74,20 +90,19 @@ namespace homeTask_4
 
             InitializeArray(array1);
             InitializeArray(array2);
-
             PrintArray(array1);
             SwitchArray(array1);
             Console.WriteLine("Array1 with switched Min and Max element");
             PrintArray(array1);
-            Console.WriteLine("Max element of array1 is {0}", MaxElement(array1));
-            Console.WriteLine("Min element of array1 is {0}", MinElement(array1));
+            Console.WriteLine("Max element of array1 is {0}", MinMaxElement(array1).max);
+            Console.WriteLine("Min element of array1 is {0}", MinMaxElement(array1).min);
             Console.WriteLine("--------------------------");
             PrintArray(array2);
             SwitchArray(array2);
             Console.WriteLine("Array2 with switched Min and Max element");
             PrintArray(array2);
-            Console.WriteLine("Max element of array2 is {0}", MaxElement(array2));
-            Console.WriteLine("Min element of array2 is {0}", MinElement(array2));
+            Console.WriteLine("Max element of array2 is {0}", MinMaxElement(array2).max);
+            Console.WriteLine("Min element of array2 is {0}", MinMaxElement(array2).min);
 
         }
     }
