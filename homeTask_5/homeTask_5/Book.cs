@@ -41,10 +41,5 @@ namespace homeTask_5
             return this.uniqueId;
         }
 
-        public static void PrintAllBooks(Book[] books)
-        {
-            foreach (Book book in books)
-                Console.WriteLine("Name of Book: {0}, Number of pages: {1}, Unique Id: {2}", book.GetName(), book.GetPage(), book.GetUId());
-        }
     }
 }
