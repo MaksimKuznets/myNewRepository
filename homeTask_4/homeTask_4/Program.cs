@@ -8,7 +8,7 @@ namespace homeTask_4
         
 //1. Создать два произвольных массива, подсчитать максимальное и минимальное значение их элементов.Вывести на экран.
 //2. Поменять в массивах максимальные и минимальные значения местами
-        static void InitializeArray(int[] array)
+        public void InitializeArray(int[] array)
         {
             Random rnd = new Random();
             for (int i = 0; i < array.Length; ++i)
@@ -17,7 +17,7 @@ namespace homeTask_4
             }
         }
 
-        static void PrintArray(int[] array)
+        public void PrintArray(int[] array)
         {
             for (int i = 0; i < array.Length; ++i)
             {
@@ -25,85 +25,60 @@ namespace homeTask_4
             }
         }
 
-        static (int min, int max) MinMaxElement(int[] array)
+        public (int min, int max) MinMaxElementToSwitch(int[] array)
         {
-            var minMax = (min: array[0], max: array[0]);
+            int  minIndex = 0;
+            int  maxIndex = 0;
+            var minMax = (min: array[0], max:array[0]);
             for (int i = 0; i < array.Length; ++i)
             {
 
                 if (array[i] > minMax.max)
                 {
                     minMax.max = array[i];
+                    
+                    maxIndex = i;
                     continue;
                 }
                 else
                 if (array[i] < minMax.min)
                 {
                     minMax.min = array[i];
+                    minIndex = i;
                     continue;
                 }
                 else
                 if ((array[i] == minMax.max) || (array[i] == minMax.max)) continue;
             }
+            int buf = array[maxIndex];
+            array[maxIndex] = array[minIndex];
+            array[minIndex] = buf;
 
             return minMax;
         }
-
-        //static int MinElement(int[] array)
-        //{
-        //    int min = array[0];
-        //    for (int i = 0; i < array.Length; i++)
-        //        if (array[i] < min)
-        //           min = array[i];
-                 
-        //    return min;
-        //}
-        static void SwitchArray(int[] array)
-        {
-            int min = array[0];
-            int max = array[0];
-            int minNumber = 0;
-            int maxNumber = 0;
-
-            for (int i = 0; i < array.Length; i++)
-            {
-
-                maxNumber = (array[i] > max) ? array[i] : maxNumber;
-                //if (array[i] > max) {
-                //    max = array[i];
-                //    maxNumber = i;
-                //        }
-                //if (array[i] < min) {
-                //    min = array[i];
-                //    minNumber = i;
-                //        }
-            }
-            int buf = array[maxNumber];
-            array[maxNumber] = array[minNumber];
-            array[minNumber] = buf;
-        }
-
         static void Main(string[] args)
         {
+            Program massive = new Program();
             int[] array1 = new int[10];
             int[] array2 = new int[10];
-
-            InitializeArray(array1);
-            InitializeArray(array2);
-            PrintArray(array1);
-            SwitchArray(array1);
+            (int min, int max) minMaxValues;
+            massive.InitializeArray(array1);
+            massive.InitializeArray(array2);
+            massive.PrintArray(array1);
+            minMaxValues = massive.MinMaxElementToSwitch(array1);
             Console.WriteLine("Array1 with switched Min and Max element");
-            PrintArray(array1);
-            Console.WriteLine("Max element of array1 is {0}", MinMaxElement(array1).max);
-            Console.WriteLine("Min element of array1 is {0}", MinMaxElement(array1).min);
+            massive.PrintArray(array1);
             Console.WriteLine("--------------------------");
-            PrintArray(array2);
-            SwitchArray(array2);
+            Console.WriteLine("Max element of array1 is {0}", minMaxValues.max);
+            Console.WriteLine("Min element of array1 is {0}", minMaxValues.min);
+            Console.WriteLine("--------------------------");
+            massive.PrintArray(array2);
+            minMaxValues = massive.MinMaxElementToSwitch(array2);
             Console.WriteLine("Array2 with switched Min and Max element");
-            PrintArray(array2);
-            Console.WriteLine("Max element of array2 is {0}", MinMaxElement(array2).max);
-            Console.WriteLine("Min element of array2 is {0}", MinMaxElement(array2).min);
-
+            massive.PrintArray(array2);
+            Console.WriteLine("--------------------------");
+            Console.WriteLine("Max element of array2 is {0}", minMaxValues.max);
+            Console.WriteLine("Min element of array2 is {0}", minMaxValues.min);
         }
     }
 }
