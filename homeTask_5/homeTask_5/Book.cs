@@ -6,39 +6,39 @@ namespace homeTask_5
 {
     class Book
     {
-        private String name = "";
+        private String name="";
         private int pageCount;
         private String uniqueId = "";
-
         public Book(String name, int pageCount, String uniqueId)
         {
             this.name = name;
             this.pageCount = pageCount;
             this.uniqueId = uniqueId;
         }
-        public void SetName(String name)
+        public Book()
         {
-            this.name = name;
+
         }
-        public void SetPage(int page)
+        public String Name
         {
-             this.pageCount = page;
+            get 
+            {
+                return this.name;
+            }
         }
-        public void SetUniqueId(String id)
+        public int PageCount
         {
-            this.uniqueId = id;
+            get
+            {
+                return this.pageCount;
+            }
         }
-        public String GetName()
+        public String UniqueId
         {
-            return this.name;
-        }
-        public int GetPage()
-        {
-            return this.pageCount;
-        }
-        public String GetUId()
-        {
-            return this.uniqueId;
+            get                
+            {
+                return this.uniqueId;
+            }
         }
 
     }

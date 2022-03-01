@@ -21,7 +21,7 @@ namespace homeTask_5
         {
             foreach(Book book in books)
             {
-                Console.WriteLine("Book's name:{0} ,Number of pages:{1}, UniqueId: {2}",book.GetName(),book.GetPage(),book.GetUId());
+                Console.WriteLine("Book's name:{0} ,Number of pages:{1}, UniqueId: {2}",book.Name,book.PageCount, book.UniqueId);
             }
         }
     }
