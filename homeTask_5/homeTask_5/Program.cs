@@ -8,8 +8,9 @@ namespace homeTask_5
         //Создайте массив книг (5 штук) проинициализируйте его различными объектами типа "Книга",
         //и выведите информацию о всех книгах в массиве на экран
         static void Main(string[] args)
-        {            
-            BooksInformation.Print(BooksInformation.GenerateBooksData());
+        {
+            BooksInformation listOfBooks = new BooksInformation();
+            listOfBooks.Print(BooksInformation.GenerateBooksData());
         } 
     }
 }

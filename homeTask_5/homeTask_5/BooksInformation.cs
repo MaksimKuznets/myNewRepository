@@ -17,7 +17,7 @@ namespace homeTask_5
 
             return books;
         }
-        public static void Print(Book[] books)
+        public void Print(Book[] books)
         {
             foreach(Book book in books)
             {
