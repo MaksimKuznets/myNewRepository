@@ -2,16 +2,18 @@
 
 namespace homeTask_3
 {
-    class Program
+    class AverageSum
     {
         //Задание- создать три массива по 10 элементов, первый
         //заполнить значениями индексов элементов, второй - квадратами индексов,
         //третий-кубами, и вывести на экран средние значения элементов для всех массивов
 
-        public void InitializeArray(int[] array, int n)
+        public int[] InitializeArray(int n)
         {
+            int[] array = new int[10];
             for (int i = 0; i < array.Length; i++)
                 array[i] = (int)Math.Pow(i+1, n);
+            return array;
         }
 
         public double AverageSumArray(int[] array)
@@ -25,16 +27,13 @@ namespace homeTask_3
 
         static void Main(string[] args)
         {
-            int[] array1 = new int[10];
-            int[] array2 = new int[10];
-            int[] array3 = new int[10];
-            Program massive = new Program();
-            massive.InitializeArray(array1, 1);
-            massive.InitializeArray(array2, 2);
-            massive.InitializeArray(array3, 3);
-            Console.WriteLine("Average sum for array1 = {0} ", massive.AverageSumArray(array1));
-            Console.WriteLine("Average sum for array2 = {0} ", massive.AverageSumArray(array2));
-            Console.WriteLine("Average sum for array3 = {0} ", massive.AverageSumArray(array3));
+            AverageSum massive = new AverageSum();
+           int[] array1 = massive.InitializeArray(1);
+           int[] array2 = massive.InitializeArray(2);
+           int[] array3 = massive.InitializeArray(3);
+           Console.WriteLine("Average sum for array1 = {0} ", massive.AverageSumArray(array1));
+           Console.WriteLine("Average sum for array2 = {0} ", massive.AverageSumArray(array2));
+           Console.WriteLine("Average sum for array3 = {0} ", massive.AverageSumArray(array3));
         }
     }
 }
