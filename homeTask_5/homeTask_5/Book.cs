@@ -20,9 +20,9 @@ namespace homeTask_5
 
         }
        
-        public void GetBook(Book book)
+        public void GetBook()
         {
-                  Console.WriteLine("Book's name:{0} ,Number of pages:{1}, UniqueId: {2}", book.Name, book.PageCount, book.UniqueId);
+                  Console.WriteLine("Book's name:{0} ,Number of pages:{1}, UniqueId: {2}", this.Name, this.PageCount, this.UniqueId);
         }
 
     }
