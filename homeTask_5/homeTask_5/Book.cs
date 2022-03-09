@@ -6,39 +6,23 @@ namespace homeTask_5
 {
     class Book
     {
-        private String name="";
-        private int pageCount;
-        private String uniqueId = "";
+        public String Name { get; set; } = "";
+        public int PageCount { get; set; }
+        public String UniqueId { get; set; } = "";
         public Book(String name, int pageCount, String uniqueId)
         {
-            this.name = name;
-            this.pageCount = pageCount;
-            this.uniqueId = uniqueId;
+            this.Name = name;
+            this.PageCount = pageCount;
+            this.UniqueId = uniqueId;
         }
         public Book()
         {
 
         }
-        public String Name
+       
+        public void GetBook(Book book)
         {
-            get 
-            {
-                return this.name;
-            }
-        }
-        public int PageCount
-        {
-            get
-            {
-                return this.pageCount;
-            }
-        }
-        public String UniqueId
-        {
-            get                
-            {
-                return this.uniqueId;
-            }
+                  Console.WriteLine("Book's name:{0} ,Number of pages:{1}, UniqueId: {2}", book.Name, book.PageCount, book.UniqueId);
         }
 
     }

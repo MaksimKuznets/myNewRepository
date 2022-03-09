@@ -9,8 +9,13 @@ namespace homeTask_5
         //и выведите информацию о всех книгах в массиве на экран
         static void Main(string[] args)
         {
-            BooksInformation listOfBooks = new BooksInformation();
-            listOfBooks.Print(BooksInformation.GenerateBooksData());
+            
+            Book[] books = BooksInformation.GenerateBooksData();
+            foreach (Book item in books)
+            {
+                item.GetBook(item);
+            }
+           
         } 
     }
 }

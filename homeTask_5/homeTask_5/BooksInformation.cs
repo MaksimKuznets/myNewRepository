@@ -17,12 +17,6 @@ namespace homeTask_5
 
             return books;
         }
-        public void Print(Book[] books)
-        {
-            foreach(Book book in books)
-            {
-                Console.WriteLine("Book's name:{0} ,Number of pages:{1}, UniqueId: {2}",book.Name,book.PageCount, book.UniqueId);
-            }
-        }
+        
     }
 }
