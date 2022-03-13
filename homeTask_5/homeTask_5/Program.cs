@@ -13,7 +13,7 @@ namespace homeTask_5
             Book[] books = BooksInformation.GenerateBooksData();
             foreach (Book item in books)
             {
-                item.GetBook();
+                item.PrintBook();
             }
            
         } 
