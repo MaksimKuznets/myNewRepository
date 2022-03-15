@@ -11,10 +11,5 @@ namespace homeTask_7
 
         }
 
-        public override string GetAction()
-        {
-            return ("BA is working");
-        }
-
     }
 }

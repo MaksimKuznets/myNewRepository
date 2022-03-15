@@ -10,10 +10,6 @@ namespace homeTask_7
         {
 
         }        
-        public override string GetAction()
-        {
-            return (" QA is working");
-        }
-
+        
     }
 }

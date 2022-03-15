@@ -14,10 +14,5 @@ namespace homeTask_7
             this.Name = name;
             this.LastName = lastName;
         }
-
-        public Person()
-        {
-         
-        }
     }
 }

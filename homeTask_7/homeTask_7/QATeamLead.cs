@@ -10,10 +10,6 @@ namespace homeTask_7
         {
 
         }
-        public override string GetAction()
-        {
-            return (" QATeamLead is working");
-        }
         public void AssigneTask()
         {
             Console.WriteLine(" is assigned task");

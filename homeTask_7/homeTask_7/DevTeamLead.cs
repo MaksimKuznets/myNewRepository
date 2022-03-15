@@ -10,11 +10,6 @@ namespace homeTask_7
         {
 
         }
-
-        public override string GetAction()
-        {
-            return (" DevTeamLead is working");
-        }
         public void WriteCode()
         {
             Console.WriteLine(" is writing Code");

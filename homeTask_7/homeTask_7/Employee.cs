@@ -10,7 +10,6 @@ namespace homeTask_7
         {
 
         }
-        public abstract string GetAction();
         public string GetEmployee() 
         {
             return ($"{this.Name} {this.LastName}");

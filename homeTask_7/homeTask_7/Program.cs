@@ -29,10 +29,6 @@ namespace homeTask_7
 
             Office office = new Office();
 
-            //foreach(Employee item in emp)
-            //{
-            //    office.employee.Add(item);
-            //}
             office.employee.AddRange(emp);
 
             foreach (Employee item in office.employee)
