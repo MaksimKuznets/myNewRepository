@@ -6,6 +6,20 @@ namespace homeTask_7
 {
     class Office
     {
-       public List<Employee> employee = new List<Employee>();
+       private List<Employee> employees = new List<Employee>();
+        public List<Employee> Employees
+        {
+            get
+            {
+                return this.employees;
+            }
+        }
+        public void AddEmployees(Employee[] newEmployee)
+        {
+            this.employees.AddRange(newEmployee);
+        }
+
+       
+
     }
 }

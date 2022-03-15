@@ -29,9 +29,9 @@ namespace homeTask_7
 
             Office office = new Office();
 
-            office.employee.AddRange(emp);
+            office.AddEmployees(emp);
 
-            foreach (Employee item in office.employee)
+            foreach (Employee item in office.Employees)
             {
                 if (item is IAssigner)
                 {
