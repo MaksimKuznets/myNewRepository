@@ -1,20 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using homeTask_7.Comparators;
+using System.Linq;
 
 namespace homeTask_7
 {
     //7#
-//Разработать классы для программы управления ИТ офисом.
-//1. Класс Office содержит список Employee, сотрудники бывают QAEmployee, DevEmployee,
-//BAEmployee, PMEmployee, QAAutomationEmployee, QAAutomationTeamLead, DevTEamLead, QATeamLead.
-//2. Ассайнить таски могут тимлиды и PMEmployee, делать ревью кода тимлиды QAAutomation и Dev.
-//3. Писать код могут Dev, QAAuto и их тимлиды.
-//4. Заполнить список Employee специалистами разного профиля, и вывести подробную информацию
-//о специлистах, которые могут
-//4.1 писать код
-//4.2 ассайнить таски
-//4.3 делать ревью кода
+    //Разработать классы для программы управления ИТ офисом.
+    //1. Класс Office содержит список Employee, сотрудники бывают QAEmployee, DevEmployee,
+    //BAEmployee, PMEmployee, QAAutomationEmployee, QAAutomationTeamLead, DevTEamLead, QATeamLead.
+    //2. Ассайнить таски могут тимлиды и PMEmployee, делать ревью кода тимлиды QAAutomation и Dev.
+    //3. Писать код могут Dev, QAAuto и их тимлиды.
+    //4. Заполнить список Employee специалистами разного профиля, и вывести подробную информацию
+    //о специлистах, которые могут
+    //4.1 писать код
+    //4.2 ассайнить таски
+    //4.3 делать ревью кода
+
+    //8#
+    //Задача для всех- отсортируйте и выведите в консоль сотрудников по:
+    //1. Имени
+    //2. TaxID
+    //3. Общей длине имени и фамилии
+    //4* Умению ассанить таски- ITaskAssigner сначала(их допольнительно отсортировать по фамилии), потом все остальные
+
+    //9#
+    //CДЕЛАТЬ ДАННОЕ ЗАДАНИЕ ЧЕРЕЗ LINQ
 
     class Program
     {
@@ -34,7 +45,7 @@ namespace homeTask_7
             Office office = new Office();
 
             office.AddEmployees(emp);
-            //7 task
+            Console.WriteLine("********************************************** 7task");
             foreach (Employee item in office.Employees)
             {
                 if (item is IAssigner)
@@ -56,6 +67,7 @@ namespace homeTask_7
                 }
                 
             }
+            Console.WriteLine("********************************************** 8task");
             //8 task
             Console.WriteLine("-----Sort AssigneTask by Name------");
             office.Employees.Sort(new AssigneTaskCompare());
@@ -96,6 +108,37 @@ namespace homeTask_7
                 Console.Write($"{item_1.GetEmployee()}\n");
 
             }
+            Console.WriteLine("********************************************** 9task");
+            Console.WriteLine("-----Sort AssigneTask by Name------");
+            var arraySortByName = office.Employees.OrderBy(x => x.Name);
+            foreach (var item in arraySortByName)
+            {
+                Console.Write($"{item.GetEmployee()}\n");
+
+            }
+            Console.WriteLine("-----Sort AssigneTask by LastName------");
+            var arraySortByLastName = office.Employees.OrderBy(x => x.LastName);
+            foreach (var item in arraySortByLastName)
+            {
+                Console.Write($"{item.GetEmployee()}\n");
+
+            }
+            Console.WriteLine("-----Sort AssigneTask by TaxId------");
+            var arraySortByTaxId = office.Employees.OrderBy(x => x.TaxId);
+            foreach (var item in arraySortByTaxId)
+            {
+                Console.Write($"{item.GetEmployee()}\n");
+
+            }
+
+            Console.WriteLine("-----Sort AssigneTask by Asignee than Name------");
+            var arraySortByAssigne = office.Employees.OrderByDescending(x => (x is IAssigner)).ThenBy(x => x.Name);
+            foreach (var item in arraySortByAssigne)
+            {
+                Console.Write($"{item.GetEmployee()}\n");
+
+            }
         }
+
     }
 }
