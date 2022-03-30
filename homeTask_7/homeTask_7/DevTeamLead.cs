@@ -6,7 +6,7 @@ namespace homeTask_7
 {
     class DevTeamLead: Employee, ICoding, IAssigner, IReview
     {
-        public DevTeamLead(string name, string lastName) : base(name, lastName)
+        public DevTeamLead(string name, string lastName, int taxId) : base(name, lastName, taxId)
         {
 
         }

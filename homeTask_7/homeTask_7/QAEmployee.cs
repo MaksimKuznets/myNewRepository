@@ -6,7 +6,7 @@ namespace homeTask_7
 {
     class QAEmployee: Employee
     {
-        public QAEmployee(string name, string lastName ) :base(name, lastName)
+        public QAEmployee(string name, string lastName, int taxId) : base(name, lastName, taxId)
         {
 
         }        

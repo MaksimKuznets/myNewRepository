@@ -6,7 +6,7 @@ namespace homeTask_7
 {
     class BAEmployee : Employee
     {
-        public BAEmployee(string name, string lastName) : base(name, lastName)
+        public BAEmployee(string name, string lastName, int taxId) : base(name, lastName, taxId)
         {
 
         }
