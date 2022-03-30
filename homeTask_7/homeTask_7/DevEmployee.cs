@@ -6,7 +6,7 @@ namespace homeTask_7
 {
     class DevEmployee : Employee, ICoding
     {
-        public DevEmployee(string name, string lastName, int taxId) : base(name, lastName, taxId)
+          public DevEmployee(string name, string lastName, int taxId) : base(name, lastName, taxId)
         {
 
         }
