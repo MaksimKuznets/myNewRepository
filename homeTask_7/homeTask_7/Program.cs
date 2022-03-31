@@ -86,12 +86,7 @@ namespace homeTask_7
             office.PrintOffice();
             Console.WriteLine("-----Sort by Length Fn+Ln------");
             office.Employees.Sort(new FnameLnameLengthCompare());
-<<<<<<< HEAD
-            foreach (Employee item_1 in office.Employees)
-            {
-                Console.Write($"{item_1.GetEmployee()}\n");
-
-            }
+            office.PrintOffice();
             Console.WriteLine("********************************************** 9task");
             Console.WriteLine("-----Sort AssigneTask by Name------");
             var arraySortByName = office.Employees.OrderBy(x => x.Name);
@@ -122,9 +117,7 @@ namespace homeTask_7
                 Console.Write($"{item.GetEmployee()}\n");
 
             }
-=======
-           office.PrintOffice();
->>>>>>> home8
+
         }
 
     }
