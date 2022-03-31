@@ -31,7 +31,6 @@ namespace homeTask_7
     {
         static void Main(string[] args)
         {
-
             BAEmployee BA = new BAEmployee("Ivan", "Kovalev", 4);
             DevEmployee Dev = new DevEmployee("Slava", "Rossiytsev", 55);
             DevTeamLead DevTL = new DevTeamLead("Maksim", "Medunitsa", 65);
@@ -41,9 +40,7 @@ namespace homeTask_7
             QAEmployee QA = new QAEmployee("Maksim", "Kuznets", 69);
             QATeamLead QATL = new QATeamLead("Tatiana", "Dubitskaya", 123);
             Employee[] emp = { BA, Dev, DevTL, PM, QAAutomation, QAutomationTL, QA, QATL };
-
             Office office = new Office();
-
             office.AddEmployees(emp);
             Console.WriteLine("********************************************** 7task");
             foreach (Employee item in office.Employees)
@@ -64,8 +61,7 @@ namespace homeTask_7
                 {
                     Console.Write($"{item.GetEmployee()}");
                     ((IReview)item).CodeReview();
-                }
-                
+                }                
             }
             Console.WriteLine("********************************************** 8task");
             //8 task
@@ -73,36 +69,24 @@ namespace homeTask_7
             office.Employees.Sort(new AssigneTaskCompare());
             foreach (Employee item_1 in office.Employees)
             {
-                Console.Write($"{item_1.GetEmployee()}");
                 if (item_1 is IAssigner)
                 {
-                    Console.Write(" assigner\n");
+                    Console.WriteLine($"{item_1.GetEmployee()} assigner");                    
                 }
-                else Console.Write("\n");
+               else Console.WriteLine($"{item_1.GetEmployee()}");
             }
             Console.WriteLine("-----Sort by Name------");
             office.Employees.Sort(new FirstNameCompare());
-            foreach (Employee item_1 in office.Employees)
-            {
-                Console.Write($"{item_1.GetEmployee()}\n");
-
-            }
+            office.PrintOffice();           
             Console.WriteLine("-----Sort by LastName------");
             office.Employees.Sort(new LastNameCompare());
-            foreach (Employee item_1 in office.Employees)
-            {
-                Console.Write($"{item_1.GetEmployee()}\n");
-
-            }
+            office.PrintOffice();
             Console.WriteLine("-----Sort by TaxId------");
             office.Employees.Sort(new TaxIdCompare());
-            foreach (Employee item_1 in office.Employees)
-            {
-                Console.Write($"{item_1.GetEmployee()}\n");
-
-            }
+            office.PrintOffice();
             Console.WriteLine("-----Sort by Length Fn+Ln------");
             office.Employees.Sort(new FnameLnameLengthCompare());
+<<<<<<< HEAD
             foreach (Employee item_1 in office.Employees)
             {
                 Console.Write($"{item_1.GetEmployee()}\n");
@@ -138,6 +122,9 @@ namespace homeTask_7
                 Console.Write($"{item.GetEmployee()}\n");
 
             }
+=======
+           office.PrintOffice();
+>>>>>>> home8
         }
 
     }

@@ -9,7 +9,7 @@ namespace homeTask_7.Comparators
     {
         public int Compare([AllowNull] Employee x, [AllowNull] Employee y)
         {
-            return  (x.Name.Length + x.LastName.Length) - (y.Name.Length + y.LastName.Length);
+            return x.Fullname.Length - y.Fullname.Length;
         }
     }
 }

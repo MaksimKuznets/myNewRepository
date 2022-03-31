@@ -14,7 +14,6 @@ namespace homeTask_7
         {
             Console.WriteLine(" is writing Code");
         }
-
         public void AssigneTask()
         {
             Console.WriteLine(" is assigned task");
