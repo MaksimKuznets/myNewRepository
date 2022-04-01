@@ -18,8 +18,13 @@ namespace homeTask_7
         {
             this.employees.AddRange(newEmployee);
         }
-
-       
+        public void PrintOffice()
+        {
+            foreach(Employee item in employees)
+            {
+                Console.WriteLine(item.GetEmployee());
+            }
+        }
 
     }
 }

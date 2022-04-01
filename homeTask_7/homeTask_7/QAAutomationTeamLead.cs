@@ -6,7 +6,7 @@ namespace homeTask_7
 {
     class QAAutomationTeamLead: Employee, ICoding, IAssigner, IReview
     {
-        public QAAutomationTeamLead(string name, string lastName) : base(name, lastName)
+        public QAAutomationTeamLead(string name, string lastName, int taxId) : base(name, lastName, taxId)
         {
 
         }

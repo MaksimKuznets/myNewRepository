@@ -6,7 +6,7 @@ namespace homeTask_7
 {
     class QAAutomationEmployee: Employee, ICoding, IReview
     {
-        public QAAutomationEmployee(string name, string lastName) : base(name, lastName)
+        public QAAutomationEmployee(string name, string lastName, int taxId) : base(name, lastName, taxId)
         {
 
         }
