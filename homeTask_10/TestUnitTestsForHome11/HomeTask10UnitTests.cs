@@ -2,15 +2,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using homeTask_10;
 using System.Collections.Generic;
 using System;
-using System.Collections;
-using System.Linq;
 
 namespace UnitTestsProject
 {
     [TestClass]
     public class HomeTask10UnitTests
     {
-
         [TestMethod]
         public void MyExceptionClassTest()
         {
@@ -79,7 +76,6 @@ namespace UnitTestsProject
             catalogtest1.Books = test.BookWithAuthors();
             List<Author> authors = catalogtest1.GetAutorInCatalog();
             Assert.IsTrue(new HashSet<Author>(authors).SetEquals(test.AuthorRightOrder()));
-
         }
     }
 }

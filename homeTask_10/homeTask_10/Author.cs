@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace homeTask_10
 {
@@ -23,6 +21,5 @@ namespace homeTask_10
         {
             return this.dateOfBirth.Year + this.dateOfBirth.Month + this.dateOfBirth.Day;
         }
-
     }
 }

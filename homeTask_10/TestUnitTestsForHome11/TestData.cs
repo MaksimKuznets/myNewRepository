@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 using homeTask_10;
 
-
 namespace UnitTestsProject
 {
     public class TestData
     {
-        public List<Book> MixDataBookOrder()
+        private List<Author> AuthorsList()
         {
             List<Author> authors = new List<Author>();
             authors.Add(new Author("Maksim", "Kuznets", new DateTime(1990, 7, 20)));
             authors.Add(new Author("Eugen", "Martul", new DateTime(1991, 2, 1)));
+            authors.Add(new Author("Igor", "Kheiderov", new DateTime(1981, 8, 1)));
+            authors.Add(new Author("Semen", "Slepokov", new DateTime(1981, 9, 1)));
+            return authors;
+        }
+        public List<Book> MixDataBookOrder()
+        {
+            List<Author> authors = this.AuthorsList();            
             List<Book> books = new List<Book>();
             books.Add(new Book("Game Of Thrones", new DateTime(1901, 5, 6), 1443,
                 new List<Author>() { authors[0], authors[1], }
@@ -35,9 +41,7 @@ namespace UnitTestsProject
         }
         public List<Book> RightDataBookOrder()
         {
-            List<Author> authors = new List<Author>();
-            authors.Add(new Author("Maksim", "Kuznets", new DateTime(1990, 7, 20)));
-            authors.Add(new Author("Eugen", "Martul", new DateTime(1991, 2, 1)));
+            List<Author> authors = this.AuthorsList();            
             List<Book> rightOrderBook = new List<Book>();
             rightOrderBook.Add(new Book("Collection of poems Bykov", new DateTime(1970, 2, 28), 9999,
                    new List<Author>() { authors[0] }));
@@ -52,13 +56,9 @@ namespace UnitTestsProject
             rightOrderBook.Add(new Book("War and Peace", new DateTime(1888, 1, 16), 23,
                     new List<Author>() { authors[1] }));
             return rightOrderBook;       }
-
         public List<Book> SpecificBookTestData()
         {
-            List<Author> authors = new List<Author>();
-            authors.Add(new Author("Maksim", "Kuznets", new DateTime(1990, 7, 20)));
-            authors.Add(new Author("Eugen", "Martul", new DateTime(1991, 2, 1)));
-            authors.Add(new Author("Igor", "Kheiderov", new DateTime(1981, 8, 1)));
+            List<Author> authors = this.AuthorsList();            
             List<Book> authorBooks = new List<Book>();
             authorBooks.Add(new Book("Collection of poems Bykov", new DateTime(1970, 2, 28), 9999,
                    new List<Author>() { authors[0] }));
@@ -76,7 +76,7 @@ namespace UnitTestsProject
         }
         public List<Book> SpecificBookTestDataRight()
         {
-            List<Author> authors = new List<Author>();
+            List<Author> authors = this.AuthorsList();
             authors.Add(new Author("Maksim", "Kuznets", new DateTime(1990, 7, 20)));
             authors.Add(new Author("Eugen", "Martul", new DateTime(1991, 2, 1)));
             authors.Add(new Author("Igor", "Kheiderov", new DateTime(1981, 8, 1)));
@@ -87,13 +87,9 @@ namespace UnitTestsProject
                     new List<Author>() { authors[0], authors[1] }));            
             return authorBooksright;
         }
-
         public List<Book> SpecificBookTestDataNull()
         {
-            List<Author> authors = new List<Author>();
-            authors.Add(new Author("Maksim", "Kuznets", new DateTime(1990, 1, 20)));
-            authors.Add(new Author("Eugen", "Martul", new DateTime(1891, 2, 1)));
-            authors.Add(new Author("Igor", "Kheiderov", new DateTime(1881, 8, 1)));
+            List<Author> authors = this.AuthorsList();           
             List<Book> authorBooksright = new List<Book>();
             authorBooksright.Add(new Book("Collection of poems Bykov", new DateTime(1810, 1, 1), 9999,
                    new List<Author>() { authors[0] }));
@@ -109,14 +105,9 @@ namespace UnitTestsProject
                    new List<Author>() { authors[0] }));
             return authorBooksright;
         }
-
         public List<Book> BookWithAuthors()
         {
-            List<Author> authors = new List<Author>();
-            authors.Add(new Author("Maksim", "Kuznets", new DateTime(1990, 7, 20)));
-            authors.Add(new Author("Eugen", "Martul", new DateTime(1991, 2, 1)));
-            authors.Add(new Author("Igor", "Kheiderov", new DateTime(1981, 8, 1)));
-            authors.Add(new Author("Semen", "Slepokov", new DateTime(1981, 9, 1)));
+            List<Author> authors = this.AuthorsList();          
             List<Book> authorBooks = new List<Book>();
             authorBooks.Add(new Book("Collection of poems Bykov", new DateTime(1970, 2, 28), 9999,
                    new List<Author>() { authors[0] }));
@@ -134,7 +125,6 @@ namespace UnitTestsProject
                     new List<Author>() { authors[0], authors[3] }));
             return authorBooks;
         }
-
         public List<Author> AuthorRightOrder()
         {
             List<Author> authors = new List<Author>();            
@@ -144,7 +134,5 @@ namespace UnitTestsProject
             authors.Add(new Author("Eugen", "Martul", new DateTime(1991, 2, 1)));            
             return authors;
         }
-    }
-
-    
+    }    
 }

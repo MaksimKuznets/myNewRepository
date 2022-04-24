@@ -14,7 +14,7 @@ namespace homeTask_10
         {
             List<Author> authors = new List<Author>();
             authors.Add(new Author("Maksim", "Kuznets", new DateTime(1990, 7, 20)));
-            authors.Add(new Author("Eugen", "Martul", new DateTime(1991, 2, 1)));
+            authors.Add(new Author("Eugene", "Martul", new DateTime(1991, 2, 1)));
             authors.Add(new Author("Anton", "Soshnikov", new DateTime(1980, 5, 10)));
             authors.Add(new Author("Igor", "Kheidorov", new DateTime(1982, 5, 17)));
             authors.Add(new Author("Mihailo", "Bulgakov", new DateTime(1900, 1, 15)));
@@ -30,13 +30,13 @@ namespace homeTask_10
                 new List<Author>() { authors[0], authors[1], authors[authors.Count - 1] }
                 ));
             books.Add(new Book("War and Peace", new DateTime(1888, 1, 16), 23,
-                new List<Author>() { authors[1], authors[2], authors[4] }
+                new List<Author>() { authors[1], authors[2], authors[4], authors[7] }
                 ));
             books.Add(new Book("Collection of poems Bykov", new DateTime(1970, 2, 28), 9999,
                 new List<Author>() { authors[3], authors[4] }
                 ));
             books.Add(new Book("Ruslan & lyudmila", new DateTime(1980, 3, 28), 765,
-                new List<Author>() { authors[5] }
+                new List<Author>() { authors[7] }
                 ));
             books.Add(new Book("Idiot", new DateTime(1980, 3, 28), 765,
                 new List<Author>() { authors[7], authors[6] }

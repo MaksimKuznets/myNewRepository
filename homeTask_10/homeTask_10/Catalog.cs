@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace homeTask_10
@@ -12,12 +11,10 @@ namespace homeTask_10
         {
             this.books = books;
         }
-
         public Catalog()
         {
             this.books = new List<Book>();
         }
-
         public List<Book> Books
         {
             get
@@ -61,7 +58,7 @@ namespace homeTask_10
         }
         public List<Author> GetAutorInCatalog()
         {
-            var CatalogAutor = books.SelectMany(b => b.Authors).Distinct().ToList();
+            var CatalogAutor = Books.SelectMany(b => b.Authors).Distinct().ToList();
             return CatalogAutor;
         }
         public List<Book> GetSpecificBook(Author author, DateTime datetime)
