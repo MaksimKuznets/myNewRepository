@@ -1,7 +1,5 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using System.Threading;
 
 namespace HomeTask20
@@ -20,8 +18,6 @@ namespace HomeTask20
             Thread.Sleep(5000);
             Elements locators = new Elements();
             IWebElement el = driver.FindElement(locators.elements["refreshButton"]);
-            
-
             driver.Close();
         }
     }

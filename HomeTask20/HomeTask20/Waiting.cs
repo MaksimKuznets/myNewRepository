@@ -7,11 +7,12 @@ namespace HomeTask20
 {
     class Waiting
     {
-        public static void WaitTheElement(IWebDriver driver, string xPath, int time = 5)
+        public static void WaitTheElement(IWebDriver driver,By selector, int time = 5)
         {
-            new WebDriverWait(driver, TimeSpan.FromSeconds(time)).Until(ExpectedConditions.ElementExists(By.XPath(xPath)));
-            new WebDriverWait(driver, TimeSpan.FromSeconds(time)).Until(ExpectedConditions.ElementIsVisible(By.XPath(xPath)));
-            new WebDriverWait(driver, TimeSpan.FromSeconds(time)).Until(ExpectedConditions.ElementToBeClickable(By.XPath(xPath)));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(time));
+            wait.Until(ExpectedConditions.ElementExists(selector));
+            wait.Until(ExpectedConditions.ElementIsVisible(selector));
+            wait.Until(ExpectedConditions.ElementToBeClickable(selector));
         }
     }
 }

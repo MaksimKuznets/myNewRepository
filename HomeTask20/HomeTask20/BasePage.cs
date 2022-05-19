@@ -13,13 +13,13 @@ namespace HomeTask20
         {
             this.Driver = driver;
         }
-        public IWebElement FindElemtntByMethod(string path)
+        public IWebElement FindElemtntByMethod(By selector)
         {
             IWebElement element = null;
             try
             {
-                Waiting.WaitTheElement(this.Driver, path);
-                element = Driver.FindElement(By.XPath(path));
+                Waiting.WaitTheElement(this.Driver, selector);
+                element = Driver.FindElement(selector);
             }
             catch
             {

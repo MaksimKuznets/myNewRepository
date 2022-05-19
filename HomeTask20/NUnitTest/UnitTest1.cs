@@ -1,7 +1,6 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System.Threading;
 using HomeTask20;
 
 namespace NUnitTest
@@ -11,7 +10,7 @@ namespace NUnitTest
     {
         public IWebDriver driver = null;
         public LoginYandexPage loginYandexPage = null;
-        [OneTimeSetUp]
+        [SetUp]
         public void Setup()
         {
             ChromeOptions options = new ChromeOptions();
@@ -22,16 +21,14 @@ namespace NUnitTest
             loginYandexPage.GoToLoginPage();
             loginYandexPage.LoginToHomePage("TestSlenium", "5115556MaximKqwe235`");
         }
-        [OneTimeTearDown]
+        [TearDown]
         public void TearDown()
         {
             driver.Close();
         }
-
         [Test]
         public void LoginTest()
-        {
-            
+        {            
             Assert.AreEqual(loginYandexPage.TestLogin(), "Написать");
         }
         [Test]

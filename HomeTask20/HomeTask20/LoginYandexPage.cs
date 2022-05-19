@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace HomeTask20
 {
@@ -19,22 +16,22 @@ namespace HomeTask20
         }
         public void GoToLoginPage()
         {
-            FindElemtntByMethod(initialLoginButton).Click();
+            FindElemtntByMethod(By.XPath(initialLoginButton)).Click();
         }
         public void LoginToHomePage(string username, string password)
         {
-            FindElemtntByMethod(usernameField).SendKeys(username);
-            FindElemtntByMethod(loginButtonToHomePage).Click();
-            FindElemtntByMethod(passwordField).SendKeys(password);
-            FindElemtntByMethod(loginButtonToHomePage).Click();
+            FindElemtntByMethod(By.XPath(usernameField)).SendKeys(username);
+            FindElemtntByMethod(By.XPath(loginButtonToHomePage)).Click();
+            FindElemtntByMethod(By.XPath(passwordField)).SendKeys(password);
+            FindElemtntByMethod(By.XPath(loginButtonToHomePage)).Click();
         }
         public string TestLogin()
         {
-            return FindElemtntByMethod(writeMailButton).Text;
+            return FindElemtntByMethod(By.XPath(writeMailButton)).Text;
         }
         public IWebElement TestAvatarImage()
         {
-            return FindElemtntByMethod(avatarImage);
+            return FindElemtntByMethod(By.XPath(avatarImage));
         }
     }
 }
