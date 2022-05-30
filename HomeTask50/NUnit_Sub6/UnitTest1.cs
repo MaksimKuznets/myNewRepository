@@ -6,6 +6,7 @@ using HomeTask50_Subtask6;
 
 namespace NUnit_Sub6
 {
+    [TestFixture]
     public class Tests
     {
         IWebDriver driver = null;

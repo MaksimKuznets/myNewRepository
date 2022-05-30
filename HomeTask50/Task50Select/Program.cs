@@ -11,12 +11,12 @@ namespace Task50Select
     {
         static void Main(string[] args)
         {
-            ChromeOptions options = new ChromeOptions();
-            options.AddArgument("--incognito");
-            IWebDriver driver = new ChromeDriver(options);
-            driver.Url = "https://demo.seleniumeasy.com/basic-select-dropdown-demo.html";
-            MultiSelectPage max = new MultiSelectPage(driver);
-            IList<IWebElement> el = max.GetRandomOptions(max.GetOptions(), max.GetOptions().Count);
+            //ChromeOptions options = new ChromeOptions();
+            //options.AddArgument("--incognito");
+            //IWebDriver driver = new ChromeDriver(options);
+            //driver.Url = "https://demo.seleniumeasy.com/basic-select-dropdown-demo.html";
+            //MultiSelectPage max = new MultiSelectPage(driver);
+            //IList<IWebElement> el = max.GetRandomOptions(max.GetOptions(), max.GetOptions().Count);
         }
     }
 }

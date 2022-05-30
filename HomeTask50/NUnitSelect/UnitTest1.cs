@@ -9,6 +9,7 @@ using System;
 
 namespace NUnitSelect
 {
+    [TestFixture]
     public class Tests
     {
         IWebDriver driver = null;

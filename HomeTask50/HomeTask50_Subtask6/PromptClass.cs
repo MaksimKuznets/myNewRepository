@@ -25,6 +25,5 @@ namespace HomeTask50_Subtask6
             alert = Driver.SwitchTo().Alert();
             return alert;
         }
-    } 
-    
+    }     
 }

@@ -2,40 +2,33 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
-using System.Threading;
-using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Chrome;
+using System.Threading.Tasks;
 
-namespace HomeTask50_Subtask6
+namespace HomeTask50_sub8
 {
     public abstract class BasePage
     {
-        protected IWebDriver Driver = null;
+        IWebDriver Driver = null;
         public BasePage(IWebDriver driver)
         {
             this.Driver = driver;
         }
         public IWebElement FindElementByAnyMethod(By by)
         {
+            
             IWebElement element = null;
             try
             {
-                Waiting.EplicitWaiting(this.Driver, 5, by);
+                Waiting.EplicitWaiting(Driver, 5, by);
                 element = this.Driver.FindElement(by);
-                if (element == null)
-                {
-                   throw new NoSuchElementException();
-                }
-               
             }
-            catch(NoSuchElementException e)
+            catch(WebDriverTimeoutException ex)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("The system can't find element:", ex.InnerException);
             }
             return element;
-
         }
 
     }

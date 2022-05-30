@@ -9,6 +9,7 @@ using SeleniumExtras.WaitHelpers;
 
 namespace HomeTask50_Sub7
 {
+    [TestFixture]
     public class Tests
     {
         IWebDriver driver;
@@ -21,13 +22,18 @@ namespace HomeTask50_Sub7
             driver.Url = "https://demo.seleniumeasy.com/dynamic-data-loading-demo.html";
         }
         [Test]
-        public void UserWaitong()
+        public void UserWaiting()
         {
             string selector = "//div[contains(text(),'First Name ') or contains(text(),'Last Name ')]";
             string button = "//button[@id]";
             driver.FindElement(By.XPath(button)).Click();
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
             IWebElement element = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(selector)));
+        }
+        [TearDown]
+        public void Clear()
+        {
+            driver.Quit();
         }
     }
 }
