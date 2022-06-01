@@ -1,9 +1,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
-using System.Threading.Tasks;
 using System;
-using System.Threading;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 
@@ -29,6 +27,7 @@ namespace HomeTask50_Sub7
             driver.FindElement(By.XPath(button)).Click();
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
             IWebElement element = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(selector)));
+            Assert.NotNull(element);
         }
         [TearDown]
         public void Clear()

@@ -9,6 +9,7 @@ namespace NUnit_sub9
     public class Tests
     {
         IWebDriver driver = null;
+
         [SetUp]
         public void Setup()
         {            
@@ -21,10 +22,11 @@ namespace NUnit_sub9
         [Test]
         public void TestSpecificEmployeesMethod()
         {
-            EmployeesTable emp = new EmployeesTable(driver, 3.0);
+            EmployeesTable emp = new EmployeesTable(driver);
             var employees = emp.GetSpecificEmployees(35, 900000);
             Assert.NotNull(employees);
         }
+
         [TearDown]
         public void Clear()
         {

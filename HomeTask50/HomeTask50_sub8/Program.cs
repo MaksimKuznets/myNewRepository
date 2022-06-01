@@ -12,14 +12,7 @@ namespace HomeTask50_sub8
     {
         static void Main(string[] args)
         {
-            //ChromeOptions options = new ChromeOptions();
-            //options.AddArgument("--incognito");
-            //IWebDriver driver;
-            //driver = new ChromeDriver(options);
-            //driver.Url = "https://demo.seleniumeasy.com/bootstrap-download-progress-demo.html";
-            //DownloadFile file = new DownloadFile(driver);
-            //file.ClickByDownloadButton();
-            //int i = file.GetPercentage();
+           
         }
     }
 }

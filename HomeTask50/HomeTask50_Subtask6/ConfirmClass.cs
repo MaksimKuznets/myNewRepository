@@ -11,13 +11,15 @@ using OpenQA.Selenium.Support.UI;
 
 namespace HomeTask50_Subtask6
 {
-    public class ConfirmClass:BasePage
+    public class ConfirmClass : BasePage
     {
         private string alertPopUpButton = "//button[contains(@class,'btn-lg')][text()='Click me!']";
+
         public ConfirmClass(IWebDriver driver) : base(driver)
         {
 
         }
+
         public IAlert ConfirmCall()
         {
             FindElementByAnyMethod(By.XPath(alertPopUpButton)).Click();

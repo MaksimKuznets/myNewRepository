@@ -11,6 +11,7 @@ namespace NUbit_sub8
     {
         string percent = "//div[@class='percenttext']";
         public IWebDriver driver;
+
         [SetUp]
         public void Setup()
         {
@@ -19,9 +20,10 @@ namespace NUbit_sub8
             driver = new ChromeDriver(options);
             driver.Url = "https://demo.seleniumeasy.com/bootstrap-download-progress-demo.html";
         }
+
         [Test]
         public void TestPercantage()
-        {
+        {            
             DownloadFile obj = new DownloadFile(driver);
             obj.ClickByDownloadButton();
             int value = 0;
@@ -33,9 +35,11 @@ namespace NUbit_sub8
             }
             while (value <= 50);
             driver.Navigate().Refresh();
+            // Get the default percentage before attempting to download the file
             string percentageAfterRefresh = obj.FindElementByAnyMethod(By.XPath(percent)).Text;
-            Assert.AreEqual("0%", percentageAfterRefresh);
+            Assert.AreEqual("0%", percentageAfterRefresh,"The  expected value should be the same with actual after refreshing the pasge");
         }
+
         [TearDown]
         public void Clear()
         {

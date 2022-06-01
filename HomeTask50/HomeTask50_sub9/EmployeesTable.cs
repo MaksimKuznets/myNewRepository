@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 
 namespace HomeTask50_sub9
@@ -15,32 +12,35 @@ namespace HomeTask50_sub9
         private string paginationAmount= "//a[contains(@class,'paginate_button')][not(@id)]";
         private string tableRow = "//table/tbody/child::tr";
         private string employeePropetry = "./descendant::td";
-        IWebDriver Driver;
-        double Time;
+        IWebDriver Driver;        
         public List<Employees> Employees;
-        public EmployeesTable(IWebDriver driver, double time)
+
+        public EmployeesTable(IWebDriver driver)
         {
-            this.Driver = driver;
-            this.Time = time;
-            this.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(this.Time);
+            this.Driver = driver;            
+            this.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             this.Employees = new List<Employees>();
         }
+
         public void SetUpDefaultEntries()
         { 
             IWebElement select = Driver.FindElement(By.XPath(selectEntries));
             var selectObject = new SelectElement(select);
             selectObject.SelectByText("10");
         }
+
         public IList<IWebElement> GetPagination()
         {
             var pgnCollect = Driver.FindElements(By.XPath(paginationAmount));
             return pgnCollect;
         }
+
         public IList<IWebElement> GetPageEmployee()
         {
             var employees = Driver.FindElements(By.XPath(tableRow));
             return employees;
         }
+
         public List<Employees> AllEmployees()
         {
             var paginationCount = this.GetPagination().Count;
@@ -57,6 +57,7 @@ namespace HomeTask50_sub9
             }
             return employeesCollection;
         }
+
         public Employees GetEmployee(IWebElement emp)
         {
             Employees employee = new Employees();
@@ -67,6 +68,7 @@ namespace HomeTask50_sub9
             }
             return employee;
         }
+
         public List<Employees> GetSpecificEmployees(int _age, int _salary)
         {
             var employees = this.AllEmployees();

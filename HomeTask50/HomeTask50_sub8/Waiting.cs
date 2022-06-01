@@ -12,8 +12,7 @@ namespace HomeTask50_sub8
             try
             {
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(time));
-                wait.Until(ExpectedConditions.ElementIsVisible(by));
-                //throw new WebDriverTimeoutException();
+                wait.Until(ExpectedConditions.ElementIsVisible(by));                
             }
             catch (WebDriverTimeoutException)
             {

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HomeTask50_sub9
 {
@@ -14,6 +10,7 @@ namespace HomeTask50_sub9
         public int Age { get; set; }
         public string StartDate { get; set; }
         public int Salary { get; set; }
+
         public Employees(string _fullname,string _position, string _office, string _age, string _startDate, string _salary)
         {
             this.Fullname = _fullname;
@@ -24,6 +21,11 @@ namespace HomeTask50_sub9
             this.Salary = this.SalaryToInt(_salary);
 
         }
+        public Employees()
+        {
+
+        }
+
         public dynamic this[int i]
         {
             set
@@ -64,10 +66,7 @@ namespace HomeTask50_sub9
                 }
             }
         }
-        public Employees()
-        {
-            
-        }
+        
         public int SalaryToInt(string wage)
         {
             char[] charsToTrim = { '$', ',', '/','y' };

@@ -23,6 +23,7 @@ namespace NUnitSelect
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
             driver.Url = "https://demo.seleniumeasy.com/basic-select-dropdown-demo.html";
         }
+
         [Test]
         public void ValidationSelectedElements()
         {
@@ -36,6 +37,7 @@ namespace NUnitSelect
             IList<IWebElement> selectedList = selectItem.AllSelectedOptions;
             CollectionAssert.AreEquivalent(list, selectedList);
         }
+
         [TearDown]
         public void Clear()
         {

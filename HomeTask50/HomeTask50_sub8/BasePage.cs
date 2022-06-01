@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading.Tasks;
+
 
 namespace HomeTask50_sub8
 {
     public abstract class BasePage
     {
         IWebDriver Driver = null;
+
         public BasePage(IWebDriver driver)
         {
             this.Driver = driver;
         }
+
         public IWebElement FindElementByAnyMethod(By by)
         {
             
@@ -30,6 +28,5 @@ namespace HomeTask50_sub8
             }
             return element;
         }
-
     }
 }
