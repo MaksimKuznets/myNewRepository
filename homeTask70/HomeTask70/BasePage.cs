@@ -18,7 +18,7 @@ namespace homeTask70
             IWebElement element = null;
             try
             {
-                Waiting.EplicitWaiting(Driver, 5, selector);
+                Waiting.EmplicitWaitingForElement(Driver, 5, selector);
                  element = this.Driver.FindElement(selector);
                 
             }
