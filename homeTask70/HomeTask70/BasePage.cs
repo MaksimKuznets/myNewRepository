@@ -13,14 +13,13 @@ namespace homeTask70
             this.Driver = driver;
         }
 
-        protected IWebElement FindElenemtByAnyMethod(By selector)
+        protected IWebElement FindElementByAnyMethod(By selector)
         {
             IWebElement element = null;
             try
             {
                 Waiting.EmplicitWaitingForElement(Driver, 5, selector);
-                 element = this.Driver.FindElement(selector);
-                
+                element = this.Driver.FindElement(selector);                
             }
             catch (WebDriverTimeoutException ex)
             {

@@ -18,25 +18,25 @@ namespace homeTask70
 
         public YandexLoginPage SetUsername(String _username)
         {
-            FindElenemtByAnyMethod(By.XPath(usernameField)).SendKeys(_username);
+            FindElementByAnyMethod(By.XPath(usernameField)).SendKeys(_username);
             return this;
         }
 
         public YandexLoginPage SetPassword(String _password)
         {
-            FindElenemtByAnyMethod(By.XPath(paswordField)).SendKeys(_password);
+            FindElementByAnyMethod(By.XPath(paswordField)).SendKeys(_password);
             return this;
         }
 
         public YandexLoginPage SubmitToLoginButton()
         {
-            FindElenemtByAnyMethod(By.XPath(submitButton)).Click();
+            FindElementByAnyMethod(By.XPath(submitButton)).Click();
             return this;
         }
 
         public YandexLoginPage SubmitToEnterButton()
         {
-            FindElenemtByAnyMethod(By.XPath(enterButton)).Click();
+            FindElementByAnyMethod(By.XPath(enterButton)).Click();
             return this;
         }
 
@@ -52,7 +52,7 @@ namespace homeTask70
 
         public bool IsDisplayEnterButton()
         {
-            return FindElenemtByAnyMethod(By.XPath(enterButton)).Displayed;
+            return FindElementByAnyMethod(By.XPath(enterButton)).Displayed;
         }
     }
 }
