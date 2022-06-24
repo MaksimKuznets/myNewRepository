@@ -3,6 +3,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using homeTask70;
 using System;
+using System.Threading;
 
 
 namespace NUnitHomeTask70
@@ -19,6 +20,7 @@ namespace NUnitHomeTask70
             options.AddArgument("--incognito");
             Driver = new ChromeDriver(options);
             Driver.Url = "https://yandex.by";
+            Driver.Manage().Window.Maximize();
         }
 
         [Test]
@@ -27,6 +29,8 @@ namespace NUnitHomeTask70
         {
             YandexLoginPage lPage = new YandexLoginPage(Driver);
             YandexHomePage hPage = lPage.GoToHomePage(_username, _password);
+            Thread.Sleep(5000);
+            ScreenShot.TakeScreenshot(Driver);
             Assert.IsTrue(hPage.IsDisplayAvatar(), "The expected value is displayng profile's avatar after Login");
         }
 

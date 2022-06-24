@@ -8,7 +8,7 @@ namespace homeTask70
 {
     public abstract class Waiting
     {
-        public static void EplicitWaiting(IWebDriver driver, int time, By by)
+        public static void EmplicitWaitingForElement(IWebDriver driver, int time, By by)
         {
             try
             {

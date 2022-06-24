@@ -1,4 +1,6 @@
 ﻿using OpenQA.Selenium;
+using System;
+using System.IO;
 
 
 namespace homeTask70
@@ -15,13 +17,13 @@ namespace homeTask70
 
         public YandexHomePage SubmitProfileButton()
         {
-            FindElenemtByAnyMethod(By.XPath(profileButton)).Click();
+            FindElementByAnyMethod(By.XPath(profileButton)).Click();
             return this;
         }
 
         public YandexHomePage SubmitLogOutButton()
         {
-            FindElenemtByAnyMethod(By.XPath(logOut)).Click();
+            FindElementByAnyMethod(By.XPath(logOut)).Click();
             return this;
         }
 
@@ -34,8 +36,7 @@ namespace homeTask70
 
         public bool IsDisplayAvatar()
         {
-            return FindElenemtByAnyMethod(By.XPath(profileButton)).Displayed;
-        }
-
+            return FindElementByAnyMethod(By.XPath(profileButton)).Displayed;
+        }        
     }
 }
